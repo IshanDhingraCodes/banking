@@ -92,6 +92,7 @@ export async function getLoggedInUser() {
     return parseStringify(user);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
+    console.log(error);
     return null;
   }
 }
@@ -103,8 +104,8 @@ export const logoutAccount = async () => {
     cookies().delete("appwrite-session");
 
     await account.deleteSession("current");
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
+    console.log(error);
     return null;
   }
 };
@@ -133,7 +134,7 @@ export const createBankAccount = async ({
   accountId,
   accessToken,
   fundingSourceUrl,
-  sharableId,
+  shareableId,
 }: createBankAccountProps) => {
   try {
     const { database } = await createAdminClient();
@@ -148,13 +149,15 @@ export const createBankAccount = async ({
         accountId,
         accessToken,
         fundingSourceUrl,
-        sharableId,
+        shareableId,
       }
     );
 
     return parseStringify(bankAccount);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const exchangePublicToken = async ({
@@ -171,11 +174,11 @@ export const exchangePublicToken = async ({
     const itemId = response.data.item_id;
 
     //get account information from plaid using the access token
-    const accountResponse = await plaidClient.accountsGet({
+    const accountsResponse = await plaidClient.accountsGet({
       access_token: accessToken,
     });
 
-    const accountData = accountResponse.data.accounts[0];
+    const accountData = accountsResponse.data.accounts[0];
 
     //create a processor token for dwolla using the account token and account ID
     const request: ProcessorTokenCreateRequest = {
@@ -204,7 +207,7 @@ export const exchangePublicToken = async ({
       accountId: accountData.account_id,
       accessToken,
       fundingSourceUrl,
-      sharableId: encryptId(accountData.account_id),
+      shareableId: encryptId(accountData.account_id),
     });
 
     //Revalidate the path to reflect the changes
