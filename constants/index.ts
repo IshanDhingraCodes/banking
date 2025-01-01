@@ -20,6 +20,24 @@ export const sidebarLinks = [
     label: "Transfer Funds",
   },
 ];
+export const Mobile = [
+  {
+    route: "home",
+    label: "Home",
+  },
+  {
+    route: "features",
+    label: "Features",
+  },
+  {
+    route: "faq",
+    label: "FAQ",
+  },
+  {
+    route: "/sign-in",
+    label: "Sign-In",
+  },
+];
 
 // good_user / good_password - Bank of America
 export const TEST_USER_ID = "6627ed3d00267aa6fa3e";
@@ -141,3 +159,94 @@ export const transactionCategoryStyles = {
     chipBackgroundColor: "bg-inherit",
   },
 };
+
+export const logos = [
+  { image: "chase.png", alt: "chase" },
+  { image: "bankOfAmerica.png", alt: "Bank of America" },
+  { image: "wellFargo.png", alt: "Well Fargo" },
+  { image: "citibank.png", alt: "Citibank" },
+  { image: "usbank.png", alt: "US Bank" },
+  { image: "capitalone.png", alt: "Capital One" },
+];
+
+export const features = [
+  {
+    name: " Seamless Bank Integrations",
+    icon: "bank-card.svg",
+    description:
+      "Connect with your bank accounts securely through Plaid and access your balances, transactions, and financial data from multiple institutions.",
+  },
+  {
+    name: "Effortless Money Transfers",
+    icon: "money.svg",
+    description:
+      "Send and receive money securely with ACH transfers via Dwolla, making it quick and easy to manage funds between accounts.",
+  },
+  {
+    name: "Real-Time Transaction History",
+    icon: "real-time.svg",
+    description:
+      "Track your transactions instantly, view merchant details, amounts, and dates, all in one place.",
+  },
+  {
+    name: "Automated Expense Categorization",
+    icon: "graph.svg",
+    description:
+      "Automatically categorize your spending into relevant groups like Groceries, Dining, Entertainment, and more to analyze your financial habits.",
+  },
+  {
+    name: "Secure & Private",
+    icon: "secure.svg",
+    description:
+      "Your data security matters: We use advanced encryption to protect your personal and financial information.",
+  },
+  {
+    name: "Multi-Account Support",
+    icon: "link.svg",
+    description:
+      "Link and manage multiple accounts from various banks on a single platform, simplifying your financial overview.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "What is this app and how does it work?",
+    answer:
+      "This app allows you to securely link your bank accounts, view your transaction history, track your spending, and transfer funds between accounts. It uses Plaid to connect to your bank and fetch transaction data, while Dwolla handles transfers between accounts.",
+  },
+  {
+    question: "How do I link my bank account?",
+    answer:
+      "To link your bank account, simply log in to the app and select 'Link Bank Account.' You'll be prompted to enter your bank login credentials securely through Plaid. Once authenticated, your bank account will be connected to the app.",
+  },
+  {
+    question: "Is my financial data secure?",
+    answer:
+      "Yes, your financial data is secure. We use Plaid and Dwolla, both of which follow industry-leading security protocols. Your bank credentials are never stored by us, and all data is encrypted using secure technologies.",
+  },
+  {
+    question: "Can I link multiple bank accounts?",
+    answer:
+      "Yes, you can link multiple bank accounts from different financial institutions to the app. Each account will be listed separately, allowing you to track transactions from all your linked accounts.",
+  },
+  {
+    question: "Can I transfer money between my accounts using the app?",
+    answer:
+      "Yes, you can transfer funds between your linked accounts. Using Dwolla's secure transfer system, you can send ACH payments and manage your finances directly through the app.",
+  },
+  {
+    question:
+      "Can I see the transaction history from multiple bank accounts in one place?",
+    answer:
+      "Yes, once you've linked multiple accounts, you can view all of your transactions in one dashboard. The app aggregates data from all your linked accounts, allowing you to see your full transaction history in one place.",
+  },
+  {
+    question: "Can I use this app to send money to someone else?",
+    answer:
+      "Yes, you can send money to another person if they are linked to the app and have a Dwolla account. Simply initiate a transfer to their bank account via the app.",
+  },
+  {
+    question: "Is this app free to use?",
+    answer: "Yes, the app is free to use.",
+  },
+];
