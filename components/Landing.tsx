@@ -10,7 +10,7 @@ import LandingFooter from "./LandingFooter";
 
 const Landing = () => {
   return (
-    <section>
+    <section id="home">
       <LandingNavbar />
       <Hero />
       <LogoTicker />

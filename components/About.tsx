@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <section className="py-24" id="features">
-      <div className="container overflow-x-clip">
+      <div className="container overflow-x-clip select-none">
         <div className=" bg-bank-green-gradient rounded-s-[50px] p-10  overflow-x-clip">
           <div className="font-inter font-semibold  ml:20">About</div>
           <div className="flex flex-col md:flex-row justify-around mt-3 gap-3">

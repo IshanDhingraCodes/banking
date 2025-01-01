@@ -9,7 +9,7 @@ const Faqs = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <section className="py-24" id="faq">
-      <div className="container">
+      <div className="container select-none">
         <h2 className="text-6xl font-inter font-medium text-center max-w-xl mx-auto">
           Questions? We&apos;ve got{" "}
           <span className="text-green-700">answers</span>

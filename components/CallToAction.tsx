@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { AnimationPlaybackControls, motion, useAnimate } from "framer-motion";
+import Link from "next/link";
 
 const CallToAction = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -38,7 +39,7 @@ const CallToAction = () => {
             <div key={i} className="flex items-center gap-16">
               <span className="text-green-700 text-7xl">&#10038;</span>
               <span className="group-hover:text-black-1">
-                Connect Your First Bank
+                <Link href={"/sign-in"}>Connect Your First Bank</Link>
               </span>
             </div>
           ))}

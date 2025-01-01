@@ -8,7 +8,7 @@ const LogoTicker = () => {
   return (
     <section className="py-24 overflow-x-clip">
       <div className="container">
-        <h3 className="text-center text-black-1 text-xl font-inter">
+        <h3 className="text-center text-black-1 text-xl font-inter select-none">
           All Your Banks, One Platform, Powered by Dwolla.
         </h3>
         <div className="flex overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">

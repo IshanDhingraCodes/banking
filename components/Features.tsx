@@ -8,7 +8,7 @@ const Features = () => {
   return (
     <section className="py-24 overflow-hidden">
       <div className="container">
-        <div className="grid lg:grid-cols-2 items-center lg:gap-16">
+        <div className="grid lg:grid-cols-2 items-center lg:gap-16 select-none">
           <div>
             <h2 className="text-6xl font-inter font-medium text-center sm:text-center md:text-start ">
               Best <span className="text-green-700">features</span> provided by

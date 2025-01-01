@@ -35,7 +35,7 @@ export const Mobile = [
   },
   {
     route: "/sign-in",
-    label: "Sign-In",
+    label: "Sign In",
   },
 ];
 

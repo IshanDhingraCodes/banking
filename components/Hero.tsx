@@ -28,7 +28,7 @@ const Hero = () => {
           ref={leftDesignScope}
           initial={{ opacity: 0, y: 100, x: -100 }}
           drag
-          className="absolute -left-44 top-44 border-4 border-black-2 rounded-xl hidden lg:block"
+          className="absolute -left-44 top-44 border-4 border-black-2 rounded-xl hidden lg:block cursor-pointer"
         >
           <Image
             src={"/icons/design1.png"}
@@ -43,7 +43,7 @@ const Hero = () => {
           ref={rightDesignScope}
           initial={{ opacity: 0, x: 100, y: 100 }}
           drag
-          className="absolute -right-72 -top-16 hidden lg:block"
+          className="absolute -right-72 -top-16 hidden lg:block cursor-pointer"
         >
           <Image
             src={"/icons/auth-image.svg"}
@@ -54,21 +54,21 @@ const Hero = () => {
           />
         </motion.div>
         <div className="flex justify-center">
-          <div className="inline-flex py-1 px-3 bg-gradient-to-r from-green-400 to-blue-400 rounded-full text-black-1 font-inter font-semibold">
+          <div className="inline-flex py-1 px-3 bg-gradient-to-r from-green-400 to-blue-400 rounded-full text-black-1 font-inter font-semibold select-none">
             🏦 Simplify Your Financial Life 🏦
           </div>
         </div>
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-inter text-center font-medium mt-6">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-inter text-center font-medium mt-6 select-none">
           Track, Manage, and Grow Your Money Effortlessly
         </h1>
-        <p className="text-center font-ibm-plex-serif text-xl text-black-2 mt-8 max-w-2xl mx-auto">
+        <p className="text-center font-ibm-plex-serif text-xl text-black-2 mt-8 max-w-2xl mx-auto select-none">
           Connect multiple bank accounts, view your transactions, and gain
           insights into your spending—all in one place.
         </p>
         <div className="flex justify-center mt-12">
           <Link
             href={"/sign-in"}
-            className="bg-bank-green-gradient font-inter text-white font-semibold whitespace-nowrap p-3 rounded-full "
+            className="bg-bank-green-gradient font-inter text-white font-semibold whitespace-nowrap p-3 rounded-full select-none "
           >
             Connect Your First Bank
           </Link>

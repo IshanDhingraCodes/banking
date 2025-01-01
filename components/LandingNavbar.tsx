@@ -1,46 +1,77 @@
 "use client";
 
 import Image from "next/image";
+import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 import React from "react";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
-import { cn } from "@/lib/utils";
 import { Mobile } from "@/constants";
-import { usePathname } from "next/navigation";
-
 const LandingNavbar = () => {
-  const pathname = usePathname();
   return (
     <div className="container sticky top-0 py-4 lg:py-8 z-50 bg-transparent">
       {/* desktop Navbar */}
       <div className="w-full bg-[#F1F1F1]/90 backdrop-blur rounded-3xl py-4 px-12 font-inter max-md:hidden shadow-creditCard">
         <div className="flex justify-between items-center">
           <div className="flex justify-around mx-auto gap-12 max-lg:gap-5">
-            <Link href={"/"}>Home</Link>
+            <ScrollLink
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+              className="cursor-pointer select-none"
+            >
+              Home
+            </ScrollLink>
             <Image
               src={"./icons/asterisk.svg"}
               alt={"asterisk"}
               height={20}
               width={20}
             />
-            <Link href="#features">Features</Link>
+            <ScrollLink
+              to="features"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+              className="cursor-pointer select-none"
+            >
+              Features
+            </ScrollLink>
           </div>
 
-          <div className="flex items-center gap-2  select-none">
-            <Image src={"/icons/logo.svg"} alt={""} height={35} width={35} />
+          <div className="flex items-center gap-2 select-none">
+            <Image
+              src={"/icons/logo.svg"}
+              alt={"logo"}
+              height={35}
+              width={35}
+            />
             <h1 className="2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1">
               Horizon
             </h1>
           </div>
           <div className="flex justify-around gap-12 max-lg:gap-5 mx-auto">
-            <Link href="#faq">FAQ</Link>
+            <ScrollLink
+              to="faq"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+              className="cursor-pointer select-none"
+            >
+              FAQ
+            </ScrollLink>
             <Image
               src={"./icons/asterisk.svg"}
               alt={"asterisk"}
               height={20}
               width={20}
             />
-            <Link href={"/sign-in"}>Sign-In</Link>
+            <Link href="/sign-in" className="cursor-pointer select-none">
+              Sign In
+            </Link>
           </div>
         </div>
       </div>
@@ -60,8 +91,12 @@ const LandingNavbar = () => {
               />
             </SheetTrigger>
             <SheetContent side="left" className="border-none bg-[#F1F1F1]">
-              <Link
-                href="/"
+              <ScrollLink
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
                 className="cursor-pointer items-center gap-1 px-4 flex"
               >
                 <Image
@@ -73,40 +108,41 @@ const LandingNavbar = () => {
                 <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
                   Horizon
                 </h1>
-              </Link>
+              </ScrollLink>
 
               <div className="mobilenav-sheet">
                 <SheetClose asChild>
                   <nav className="flex h-full flex-col gap-6 pt-16 text-white">
                     {Mobile.map((item) => {
-                      const isActive =
-                        pathname === item.route ||
-                        pathname.startsWith(`${item.route}/`);
-
                       return (
                         <SheetClose asChild key={item.route}>
-                          <Link
-                            href={`${
-                              item.route === "/sign-in"
-                                ? `${item.route}`
-                                : `#${item.route}`
-                            }`}
-                            key={item.label}
-                            className={cn("mobilenav-sheet_close w-full", {
-                              "bg-bank-gradient": isActive,
-                            })}
-                          >
-                            <p
-                              className={cn(
-                                "text-16 font-semibold text-black-2",
-                                {
-                                  "text-white": isActive,
-                                }
-                              )}
+                          {item.label === "Sign In" ? (
+                            // Use Next.js Link for Sign-in page navigation
+                            <Link
+                              href={item.route}
+                              key={item.label}
+                              className="mobilenav-sheet_close w-full"
                             >
-                              {item.label}
-                            </p>
-                          </Link>
+                              <p className="text-16 font-semibold text-black-2 cursor-pointer select-none">
+                                {item.label}
+                              </p>
+                            </Link>
+                          ) : (
+                            // Use react-scroll's Link for smooth scrolling to sections
+                            <ScrollLink
+                              to={item.route}
+                              key={item.label}
+                              spy={true}
+                              smooth={true}
+                              offset={-50}
+                              duration={500}
+                              className="mobilenav-sheet_close w-full"
+                            >
+                              <p className="text-16 font-semibold text-black-2 cursor-pointer select-none">
+                                {item.label}
+                              </p>
+                            </ScrollLink>
+                          )}
                         </SheetClose>
                       );
                     })}
